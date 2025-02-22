@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Sidebar from "./components/Sidebar";
+import TopNavbar from "./components/TopNavbar";
+import DoctorList from "./components/DoctorList";
+import DoctorDetails from "./components/DoctorDetails";
+import { doctors } from "./DoctorData";
 
 function App() {
+  const [selectedDoctor, setSelectedDoctor] = useState(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ display: "flex" }}>
+      {/* Left Sidebar */}
+      <Sidebar />
+
+      <div style={{ marginLeft: "200px", width: "100%" }}>
+        {/* Top Navbar */}
+        <TopNavbar />
+
+        {/* Main Content */}
+        <div style={{ padding: "80px" }}>
+          {selectedDoctor ? (
+            <DoctorDetails
+              doctor={selectedDoctor}
+              onBack={() => setSelectedDoctor(null)}
+            />
+          ) : (
+            <DoctorList doctors={doctors} onSelectDoctor={setSelectedDoctor} />
+          )}
+        </div>
+      </div>
     </div>
   );
 }
