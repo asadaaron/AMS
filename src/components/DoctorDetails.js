@@ -18,15 +18,15 @@ function DoctorDetails({ doctor, onBack }) {
         boxShadow: "2px 2px 5px rgba(0,0,0,0.1)",
       }}
     >
-      <h2>{doctor.name}</h2>
+      <h2>{doctor.appointeeName}</h2>
       <p>
         <strong>Speciality:</strong> {doctor.speciality}
       </p>
       <p>
-        <strong>Experience:</strong> {doctor.experience}
+        <strong>Experience:</strong> {doctor.yearOfExperience}
       </p>
       <p>
-        <strong>Contact:</strong> {doctor.contact}
+        <strong>Contact:</strong> {doctor.email}
       </p>
 
       <button

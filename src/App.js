@@ -7,13 +7,20 @@ import { doctors } from "./DoctorData";
 
 function App() {
   const [selectedDoctor, setSelectedDoctor] = useState(null);
+  const [isOpen, setIsOpen] = useState(true);
 
   return (
     <div style={{ display: "flex" }}>
       {/* Left Sidebar */}
-      <Sidebar />
+      <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
 
-      <div style={{ marginLeft: "200px", width: "100%" }}>
+      <div
+        style={{
+          marginLeft: isOpen ? "200px" : "60px", // Shift content dynamically
+          width: "100%",
+          transition: "margin-left 0.3s ease",
+        }}
+      >
         {/* Top Navbar */}
         <TopNavbar />
 

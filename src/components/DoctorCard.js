@@ -9,19 +9,19 @@ function DoctorCard({ doctor, onSelect, showExperience }) {
       style={{
         border: "1px solid #ccc",
         padding: "15px",
-        marginLeft: "50px",
+        margin: "10px",
         borderRadius: "8px",
         cursor: "pointer",
         boxShadow: "2px 2px 5px rgba(0,0,0,0.1)",
       }}
     >
-      <h3>{doctor.name}</h3>
+      <h3>{doctor.appointeeName}</h3>
       <p>
         <strong>Speciality:</strong> {doctor.speciality}
       </p>
       {showExperience && (
         <p>
-          <strong>Experience:</strong> {doctor.experience}
+          <strong>Experience:</strong> {doctor.yearOfExperience}
         </p>
       )}
     </div>

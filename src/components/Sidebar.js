@@ -1,8 +1,7 @@
 // src/components/Sidebar.js
 import React, { useState } from "react";
 
-function Sidebar() {
-  const [isOpen, setIsOpen] = useState(true);
+function Sidebar({ isOpen, setIsOpen }) {
   return (
     <div
       style={{

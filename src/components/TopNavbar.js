@@ -1,23 +1,24 @@
 // src/components/TopNavbar.js
 import React from "react";
 
-function TopNavbar() {
+function TopNavbar({ isOpen }) {
   return (
     <div
       style={{
         width: "100%",
         height: "60px",
-        backgroundColor: "#007BFF",
+        backgroundColor: "#333",
         color: "white",
         position: "fixed",
         top: "0",
-        left: "235px", // Align after sidebar
+        //marginLeft: isOpen ? "80px" : "60px", // Align after sidebar
+        transition: "left 0.3 ease",
         display: "flex",
         alignItems: "center",
-        paddingLeft: "20px",
+        paddingLeft: "45px",
       }}
     >
-      <h2>Appointment Booking System</h2>
+      <h2>Appointment Management System</h2>
     </div>
   );
 }
